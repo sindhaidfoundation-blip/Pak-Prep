@@ -59,3 +59,13 @@ For each authorized past paper: recruiting body, post/job title, BPS, year, subj
 - Status: the paper collection is third-party hosted; no official FDE-hosted recruitment-paper archive was verified. Do not confuse FDE school-grade annual exam papers with FDE staff recruitment tests.
 
 For all three collections, preserve the original source URL and mark each record as `third_party_unverified` until the original paper can be matched to an official test notice, roll-number slip, answer key or recruiting-agency record.
+
+
+## Jahangir’s World Times (JWT) / World Times Institute
+
+- Official magazine landing page (English and Urdu magazine sections): https://www.worldtimesinstitute.com.pk/website/magazine
+- World Times Institute background: https://www.worldtimesinstitute.com.pk/website/aboutus
+- Pak-Prep navigation: JWT Magazine Study Centre, linking to the official publisher page.
+- Access status: the public magazine landing page is accessible; availability of complete issues, archives, downloads or paid articles must be checked on the publisher page for each issue. Do not claim full-issue access unless verified.
+- Study workflow: issue/date citation, original current-affairs notes, independently authored CSS/PMS outlines, vocabulary and original MCQs based on material that can actually be inspected.
+- Rights: do not copy or rehost JWT magazine PDFs or full articles without permission. Link to the publisher and preserve issue metadata; create original study aids and cite the source issue.
