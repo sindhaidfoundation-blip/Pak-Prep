@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Pak-Prep",
+    "slug": "pak-prep",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#075B32"
+    },
+    "android": {
+      "package": "pk.pakprep.app"
+    },
+    "ios": {
+      "bundleIdentifier": "pk.pakprep.app",
+      "supportsTablet": true
+    }
+  }
+}
