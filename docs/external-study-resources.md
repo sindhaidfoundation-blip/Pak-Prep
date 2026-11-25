@@ -32,3 +32,30 @@ PakMCQs publicly advertises solved-paper collections for ETEA, FPSC, NTS/NAT/GAT
 For each authorized MCQ: subject, topic, question, four options, correct option, explanation, language, difficulty, source URL, rights basis, rights evidence, reviewer, and publication status.
 
 For each authorized past paper: recruiting body, post/job title, BPS, year, subject/paper name, language, original source URL, rights basis, rights evidence, and verification status.
+
+
+## Additional federal recruitment-paper collections
+
+### NCCIA (National Cyber Crime Investigation Agency)
+
+- Third-party NCCIA past-paper and syllabus index: https://www.testpointpk.com/past-papers-mcqs/nccia-past-papers-and-syllabus?page=1
+- Third-party NCCIA sample/model paper collection: https://www.testpointpk.com/v2.testpoint.pk/public/paper-mcqs/6852/nccia-sample-paper
+- Listed items include a sample paper, a five-year collection, and a Sub-Inspector paper labelled 2020, plus post-specific syllabus material for Constable, ASI, UDC, Steno Typist, Technical Assistant and Constable Driver.
+- Status: third-party circulated/model material; no official NCCIA recruitment paper or official answer key was verified in this research. Do not label these as official past papers.
+
+### Islamabad Capital Police (ICT Police)
+
+- Third-party past-paper directory: https://testpointpk.com/all-past-papers
+- Additional study archive: https://uzailearning.com/
+- Listed post examples include Constable, ASI, LDC, UDC, Stenotypist and Data Entry Operator; some third-party listings identify September 2024 papers.
+- Status: third-party model/circulated material, not verified as official source PDFs. Verify post, test date and issuing/testing body before classifying.
+
+### Federal Directorate of Education (FDE), Islamabad
+
+- Third-party FDE EST five-year past-paper collection (advertised as 2018–2024): https://testpointpk.com/paper-mcqs/4464/fde-est-5-years-past-papers
+- Third-party EST paper pattern and syllabus page: https://testpointpk.com/paper-mcqs/4466/FDE-EST-Paper-Pattern
+- FDE official website for notices and current instructions: https://fde.gov.pk/
+- Listed EST subject areas include Biology, Computer Science, Mathematics, Physics, Chemistry, Urdu, Islamiat and English.
+- Status: the paper collection is third-party hosted; no official FDE-hosted recruitment-paper archive was verified. Do not confuse FDE school-grade annual exam papers with FDE staff recruitment tests.
+
+For all three collections, preserve the original source URL and mark each record as `third_party_unverified` until the original paper can be matched to an official test notice, roll-number slip, answer key or recruiting-agency record.
