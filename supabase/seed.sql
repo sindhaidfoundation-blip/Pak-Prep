@@ -47,3 +47,32 @@ select id,2024,'Provincial Planning Service Officer BPS-17 (2024) — Islamiat',
 from public.job_posts
 where title='Provincial Planning Service Officer' and region='Khyber Pakhtunkhwa' and bps=17
 on conflict(job_post_id,exam_year,title) do nothing;
+
+-- Additional KPPSC archive entries: exact PDF URLs verified from the official archive.
+-- All entries remain link-only; original PDFs stay on the KPPSC domain.
+insert into public.job_posts(recruiter_id,region,title,bps,job_family)
+select id,'Khyber Pakhtunkhwa',v.title,v.bps,v.family
+from public.recruiting_bodies r
+cross join (values
+ ('Provincial Planning Service Officer',17,'Management & Administration'),
+ ('Provincial Management Service Officer (PMS)',17,'Management & Administration'),
+ ('Civil Judge-cum-Judicial Magistrate',17,'Law & Justice')
+) as v(title,bps,family)
+where r.name='KPPSC' and r.region='Khyber Pakhtunkhwa'
+on conflict do nothing;
+
+insert into public.past_papers(job_post_id,exam_year,title,paper_language,paper_url,source_url,rights,rights_evidence,verification,status)
+select j.id,v.exam_year,v.paper_title,'English',
+ v.paper_url,'https://www.kppsc.gov.pk/past_papers',
+ 'link_only','Direct PDF link listed in the official KPPSC past-papers archive; Pak-Prep does not rehost the PDF.',
+ 'metadata_checked','published'
+from (values
+ ('Provincial Planning Service Officer',2021,'Provincial Planning Service Officer BPS-17 (2021) — All Papers','https://www.kppsc.gov.pk/public/assets/past_papers/PAST_PAPERS/PPS_2021/PPS_2021_ALL_PAPERS.pdf'),
+ ('Provincial Management Service Officer (PMS)',2022,'PMS BPS-17 (2022) — All Papers','https://www.kppsc.gov.pk/public/assets/pmspapers2022/PMS_2022_All_Papers_.pdf'),
+ ('Provincial Management Service Officer (PMS)',2025,'PMS Officer In-Service (2025)','https://www.kppsc.gov.pk/public/assets/past_papers/PAST_PAPERS/PMS_2025/PMS_Inservice_01_2025.pdf'),
+ ('Civil Judge-cum-Judicial Magistrate',2024,'Civil Judge-cum-Judicial Magistrate (2024) — Merged Papers','https://www.kppsc.gov.pk/public/assets/past_papers/PAST_PAPERS/CJ_2024/CJ_20240001_merged.pdf'),
+ ('Civil Judge-cum-Judicial Magistrate',2025,'Civil Judge-cum-Judicial Magistrate (2025)','https://www.kppsc.gov.pk/public/assets/past_papers/PAST_PAPERS/CJ_2025/CJ_05_2024_April_2025.pdf')
+) as v(job_title,exam_year,paper_title,paper_url)
+join public.job_posts j on j.title=v.job_title and j.region='Khyber Pakhtunkhwa'
+join public.recruiting_bodies r on r.id=j.recruiter_id and r.name='KPPSC'
+on conflict(job_post_id,exam_year,title) do nothing;
