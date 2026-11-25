@@ -12,4 +12,5 @@ export const practiceQuestions: PracticeQuestion[] = [
  {id:'ped-001',subject:'Pedagogy',question:'Which approach places the learner at the centre of instruction?',options:['Teacher-centred','Learner-centred','Lecture-only','Rote-only'],answerIndex:1,explanation:'Learner-centred teaching considers learners’ needs, participation and pace.',source:'original_practice'},
  {id:'reason-001',subject:'Analytical Reasoning',question:'Find the next number: 2, 4, 8, 16, __.',options:['18','24','30','32'],answerIndex:3,explanation:'Each term is multiplied by 2; the next number is 32.',source:'original_practice'},
  {id:'geo-001',subject:'Geography',question:'Which line of latitude is at 0 degrees?',options:['Tropic of Cancer','Equator','Arctic Circle','Tropic of Capricorn'],answerIndex:1,explanation:'The Equator is the 0-degree line of latitude.',source:'original_practice'}
+ {id:'snd-001',subject:'Sindhi',question:'سنڌي ٻوليءَ ۾ “سچ” جو ضد ڪهڙو آهي؟',options:['ڪوڙ','حق','ايمان','انصاف'],answerIndex:0,explanation:'“ڪوڙ” لفظ “سچ” جو ضد آهي.',source:'original_practice'}
 ];
