@@ -5,15 +5,17 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "splash": {
-      "backgroundColor": "#075B32"
+    "scheme": "pakprep",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "pk.pakprep.app"
     },
     "android": {
-      "package": "pk.pakprep.app"
+      "package": "pk.pakprep.app",
+      "versionCode": 1
     },
-    "ios": {
-      "bundleIdentifier": "pk.pakprep.app",
-      "supportsTablet": true
+    "extra": {
+      "eas": {}
     }
   }
 }
