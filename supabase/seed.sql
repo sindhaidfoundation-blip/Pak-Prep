@@ -28,3 +28,22 @@ insert into public.subjects(name,description) values
  ('Analytical Reasoning','Logic, patterns and problem solving'),
  ('Geography','Pakistan and world geography')
 on conflict(name) do nothing;
+
+-- Official source-linked paper record. PDF remains hosted on KPPSC; no third-party rehosting.
+insert into public.recruiting_bodies(name,region,website_url,body_type)
+values ('KPPSC','Khyber Pakhtunkhwa','https://www.kppsc.gov.pk/','Public Service Commission')
+on conflict(name,region) do nothing;
+
+insert into public.job_posts(recruiter_id,region,title,bps,job_family)
+select id,'Khyber Pakhtunkhwa','Provincial Planning Service Officer',17,'Management & Administration'
+from public.recruiting_bodies where name='KPPSC' and region='Khyber Pakhtunkhwa'
+on conflict do nothing;
+
+insert into public.past_papers(job_post_id,exam_year,title,paper_language,paper_url,source_url,rights,rights_evidence,verification,status)
+select id,2024,'Provincial Planning Service Officer BPS-17 (2024) — Islamiat','English and Urdu',
+ 'https://www.kppsc.gov.pk/public/assets/past_papers/PAST_PAPERS/PPS_2024/PPS_2024.pdf','https://www.kppsc.gov.pk/past_papers',
+ 'link_only','Official PDF hosted on kppsc.gov.pk; Pak-Prep links to source, does not rehost the PDF.',
+ 'metadata_checked','published'
+from public.job_posts
+where title='Provincial Planning Service Officer' and region='Khyber Pakhtunkhwa' and bps=17
+on conflict(job_post_id,exam_year,title) do nothing;
