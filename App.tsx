@@ -61,6 +61,17 @@ const articles = [
       { word: 'Backfire', urdu: 'الٹا اثر کرنا', synonyms: 'rebound, misfire, boomerang', antonyms: 'succeed, work, achieve', essay: 'A poorly designed restriction may backfire and intensify resistance.' },
     ],
   },
+  ,{
+    title: 'Whose life next?',
+    category: 'Dawn · Editorial · 25 Nov 2026',
+    url: 'https://epaper.dawn.com/DetailImage.php?StoryImage=25_11_2026_006_001',
+    summary: 'Today’s editorial discusses protection for women, access to shelters and legal aid, and the need for effective enforcement. Open the original Dawn e-paper article, then revise the vocabulary notes.',
+    words: [
+      { word: 'Accessible', urdu: 'قابلِ رسائی / آسانی سے دستیاب', synonyms: 'available, reachable, attainable', antonyms: 'inaccessible, unreachable', essay: 'Public services must be accessible to every citizen.' },
+      { word: 'Intimidation', urdu: 'دھمکانا / خوف زدہ کرنا', synonyms: 'threat, coercion, bullying', antonyms: 'encouragement, reassurance', essay: 'The state must protect citizens from intimidation and violence.' },
+      { word: 'Impunity', urdu: 'سزا سے بچ نکلنے کی حالت', synonyms: 'exemption, immunity, unaccountability', antonyms: 'accountability, liability, punishment', essay: 'Impunity weakens public trust in the justice system.' },
+    ],
+  }
 ];
 
 function openUrl(url: string) {
