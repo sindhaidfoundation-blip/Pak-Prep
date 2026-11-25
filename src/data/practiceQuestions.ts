@@ -1,0 +1,15 @@
+export type PracticeQuestion = {id:string;subject:string;question:string;options:string[];answerIndex:number;explanation:string;source:'original_practice'};
+export const practiceQuestions: PracticeQuestion[] = [
+ {id:'eng-001',subject:'English',question:'Choose the synonym of “abundant”.',options:['Scarce','Plentiful','Tiny','Weak'],answerIndex:1,explanation:'Abundant means existing in large quantities; plentiful is a synonym.',source:'original_practice'},
+ {id:'eng-002',subject:'English',question:'Choose the antonym of “reluctant”.',options:['Unwilling','Hesitant','Willing','Doubtful'],answerIndex:2,explanation:'Reluctant means unwilling; willing is its opposite.',source:'original_practice'},
+ {id:'gk-001',subject:'General Knowledge',question:'Which is the largest ocean on Earth?',options:['Atlantic Ocean','Indian Ocean','Arctic Ocean','Pacific Ocean'],answerIndex:3,explanation:'The Pacific Ocean is the largest ocean by area.',source:'original_practice'},
+ {id:'pak-001',subject:'Pakistan Studies',question:'The Constitution of Pakistan currently in force was adopted in which year?',options:['1956','1962','1973','1985'],answerIndex:2,explanation:'The Constitution of 1973 was adopted by the National Assembly in April 1973.',source:'original_practice'},
+ {id:'isl-001',subject:'Islamic Studies',question:'How many chapters (Surahs) are in the Holy Quran?',options:['110','112','114','116'],answerIndex:2,explanation:'The Holy Quran contains 114 Surahs.',source:'original_practice'},
+ {id:'sci-001',subject:'Everyday Science',question:'What is the chemical symbol for gold?',options:['Ag','Au','Gd','Go'],answerIndex:1,explanation:'Au comes from the Latin word aurum.',source:'original_practice'},
+ {id:'math-001',subject:'Mathematics',question:'What is 15% of 200?',options:['15','20','30','35'],answerIndex:2,explanation:'0.15 × 200 = 30.',source:'original_practice'},
+ {id:'cs-001',subject:'Computer Science',question:'Which protocol is commonly used to transfer web pages securely?',options:['FTP','HTTP','HTTPS','SMTP'],answerIndex:2,explanation:'HTTPS is HTTP secured using TLS encryption.',source:'original_practice'},
+ {id:'urdu-001',subject:'Urdu',question:'لفظ “خوشی” کا متضاد کیا ہے؟',options:['مسرت','غم','شادمانی','فرحت'],answerIndex:1,explanation:'غم، خوشی کا متضاد ہے۔',source:'original_practice'},
+ {id:'ped-001',subject:'Pedagogy',question:'Which approach places the learner at the centre of instruction?',options:['Teacher-centred','Learner-centred','Lecture-only','Rote-only'],answerIndex:1,explanation:'Learner-centred teaching considers learners’ needs, participation and pace.',source:'original_practice'},
+ {id:'reason-001',subject:'Analytical Reasoning',question:'Find the next number: 2, 4, 8, 16, __.',options:['18','24','30','32'],answerIndex:3,explanation:'Each term is multiplied by 2; the next number is 32.',source:'original_practice'},
+ {id:'geo-001',subject:'Geography',question:'Which line of latitude is at 0 degrees?',options:['Tropic of Cancer','Equator','Arctic Circle','Tropic of Capricorn'],answerIndex:1,explanation:'The Equator is the 0-degree line of latitude.',source:'original_practice'}
+];
