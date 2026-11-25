@@ -61,7 +61,7 @@ const articles = [
       { word: 'Backfire', urdu: 'الٹا اثر کرنا', synonyms: 'rebound, misfire, boomerang', antonyms: 'succeed, work, achieve', essay: 'A poorly designed restriction may backfire and intensify resistance.' },
     ],
   },
-  ,{
+  {
     title: 'Whose life next?',
     category: 'Dawn · Editorial · 25 Nov 2026',
     url: 'https://epaper.dawn.com/DetailImage.php?StoryImage=25_11_2026_006_001',
