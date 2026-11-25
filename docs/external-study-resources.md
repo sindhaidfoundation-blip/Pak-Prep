@@ -69,3 +69,13 @@ For all three collections, preserve the original source URL and mark each record
 - Access status: the public magazine landing page is accessible; availability of complete issues, archives, downloads or paid articles must be checked on the publisher page for each issue. Do not claim full-issue access unless verified.
 - Study workflow: issue/date citation, original current-affairs notes, independently authored CSS/PMS outlines, vocabulary and original MCQs based on material that can actually be inspected.
 - Rights: do not copy or rehost JWT magazine PDFs or full articles without permission. Link to the publisher and preserve issue metadata; create original study aids and cite the source issue.
+
+
+## WTI books and MCQ alignment
+
+The official WTI books catalogue lists titles across English, vocabulary, essays, Islamic Studies, General Science Ability, Mathematics Ability, Pakistan Affairs, Current Affairs, General Knowledge and one-paper exam preparation. WTI's public One Paper MCQs course page also identifies English, Mathematics, Islamic Studies, Urdu, General Science, Computer Science, Pakistan Affairs, Current Affairs, General Knowledge and job-related MCQs as its preparation areas. Pak-Prep uses these public subject descriptions to guide its subject coverage and writes independent practice questions. It does **not** copy or bulk-import WTI/Jahangir Publications book pages, solved MCQ banks, scans or paid material. Book-derived questions can be added from user-provided or publisher-authorized extracts, with attribution and permission recorded.
+
+Official references:
+- WTI books catalogue: https://www.worldtimesinstitute.com.pk/website/books
+- WTI One Paper MCQs programme: https://www.worldtimesinstitute.com.pk/website/coursedetail/13
+- Jahangir's World Times Publications: https://worldtimespublications.com/product-category/jwt-books/
