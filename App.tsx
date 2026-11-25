@@ -51,7 +51,22 @@ export default function App(){
  const [dawnQuizIndex,setDawnQuizIndex]=useState(0),[dawnQuizChoice,setDawnQuizChoice]=useState<number|null>(null),[dawnQuizScore,setDawnQuizScore]=useState(0);
  const Dawn=()=> <><Header title="Dawn Newspaper Study Centre" sub="Daily articles · Urdu vocabulary · synonyms · antonyms · essays · MCQ quizzes"/><View style={s.content}>
   <View style={s.hero}><Text style={s.heroEyebrow}>ENGLISH & CURRENT AFFAIRS</Text><Text style={s.heroTitle}>Read. Understand. Remember. Practise.</Text><Text style={s.heroBody}>Use original Dawn articles as reading references, then study independently prepared Urdu meanings, vocabulary, essay outlines and quizzes for competitive exams.</Text></View>
-  <Text style={s.section}>1. Dawn newspaper articles</Text><Text style={s.note}>Each title opens the original Dawn page. Pak-Prep provides its own short study notes and does not reproduce full copyrighted articles.</Text>
+  <Text style={s.section}>1. Read the Dawn newspaper</Text>
+  <Card><Text style={s.rowTitle}>Today’s Dawn e-paper</Text><Text style={s.bodyText}>Open the full newspaper edition, including front page, national news, editorial, opinion, business, international news, sports and city pages. The e-paper site displays the available edition and page archive.</Text><Btn label="Open Dawn e-paper ↗" onPress={()=>open('https://epaper.dawn.com/')}/><Btn soft label="Open Dawn newspaper homepage ↗" onPress={()=>open('https://www.dawn.com/')}/></Card>
+  <Text style={s.section}>Browse Dawn sections</Text>
+  <Card><Text style={s.bodyText}>Choose a section to read current reports and editorials on Dawn’s original website.</Text>
+   {[
+    ['Latest news','https://www.dawn.com/latest-news'],
+    ['Pakistan','https://www.dawn.com/pakistan'],
+    ['Editorials','https://www.dawn.com/newspaper/editorial'],
+    ['Opinion & columns','https://www.dawn.com/opinion'],
+    ['Business & finance','https://www.dawn.com/business'],
+    ['World','https://www.dawn.com/world'],
+    ['Sports','https://www.dawn.com/sport'],
+    ['Culture & Images','https://images.dawn.com/']
+   ].map(item=><Btn key={item[0]} soft label={item[0]+' ↗'} onPress={()=>open(item[1])}/>)}
+  </Card>
+  <Text style={s.section}>2. Dawn newspaper articles for study</Text><Text style={s.note}>Each title opens the original Dawn page. Pak-Prep provides its own short study notes and does not reproduce full copyrighted articles.</Text>
   {dawnArticles.map((a,i)=><Card key={a.title}><Text style={s.muted}>DAWN · EDITORIAL / OPINION · {a.date}</Text><Text style={s.rowTitle}>{a.title}</Text><Text style={s.bodyText}>{a.summary}</Text><Btn label="Read original Dawn article ↗" onPress={()=>open(a.url)}/><Btn soft label={expanded===i?'Hide vocabulary':'Study Urdu meanings & vocabulary'} onPress={()=>setExpanded(expanded===i?-1:i)}/>{expanded===i&&a.vocab.map(w=><View key={w[0]} style={s.word}><Text style={s.wordTitle}>{w[0]}</Text><Text style={s.bodyText}>Urdu meaning: {w[1]}</Text><Text style={s.bodyText}>Synonyms: {w[2]}</Text><Text style={s.bodyText}>Antonyms: {w[3]}</Text><Text style={s.essay}>Example: {w[4]}</Text></View>)}</Card>)}
   <Text style={s.section}>2. Essay preparation</Text><Text style={s.note}>Original exam-oriented outlines inspired by recurring newspaper themes; these are not Dawn article reproductions.</Text>
   {essayTopics.map((e,i)=><Card key={e.title}><Text style={s.rowTitle}>{e.title}</Text>{e.points.map((p,j)=><Text key={j} style={s.bodyText}>{j+1}. {p}</Text>)}<Btn soft label="Save essay topic" onPress={()=>toggle('dawn-essay:'+e.title)}/></Card>)}
