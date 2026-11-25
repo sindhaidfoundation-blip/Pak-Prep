@@ -56,7 +56,31 @@ export default function App(){
   <Text style={s.section}>2. Essay preparation</Text><Text style={s.note}>Original exam-oriented outlines inspired by recurring newspaper themes; these are not Dawn article reproductions.</Text>
   {essayTopics.map((e,i)=><Card key={e.title}><Text style={s.rowTitle}>{e.title}</Text>{e.points.map((p,j)=><Text key={j} style={s.bodyText}>{j+1}. {p}</Text>)}<Btn soft label="Save essay topic" onPress={()=>toggle('dawn-essay:'+e.title)}/></Card>)}
   <Text style={s.section}>3. Dawn vocabulary quiz</Text><Card><Text style={s.muted}>Question {dawnQuizIndex+1} of {dawnQuiz.length} · Score {dawnQuizScore}</Text><Text style={s.question}>{dawnQuiz[dawnQuizIndex].q}</Text>{dawnQuiz[dawnQuizIndex].opts.map((o,i)=><Pressable key={o} disabled={dawnQuizChoice!==null} onPress={()=>{setDawnQuizChoice(i);if(i===dawnQuiz[dawnQuizIndex].a)setDawnQuizScore(v=>v+1)}} style={[s.option,dawnQuizChoice===i&&{borderColor:i===dawnQuiz[dawnQuizIndex].a?'#16834A':'#C0392B',backgroundColor:i===dawnQuiz[dawnQuizIndex].a?'#E4F5EA':'#FCEDEC'}]}><Text style={s.optionText}>{String.fromCharCode(65+i)}. {o}</Text></Pressable>)}{dawnQuizChoice!==null&&<View style={s.explain}><Text style={{fontWeight:'900',color:dawnQuizChoice===dawnQuiz[dawnQuizIndex].a?G:'#A83224'}}>{dawnQuizChoice===dawnQuiz[dawnQuizIndex].a?'Correct answer':'Correct answer: '+dawnQuiz[dawnQuizIndex].opts[dawnQuiz[dawnQuizIndex].a]}</Text><Text style={s.bodyText}>{dawnQuiz[dawnQuizIndex].why}</Text><Btn label={dawnQuizIndex===dawnQuiz.length-1?'Restart quiz':'Next question'} onPress={()=>{if(dawnQuizIndex===dawnQuiz.length-1){setDawnQuizIndex(0);setDawnQuizScore(0)}else setDawnQuizIndex(v=>v+1);setDawnQuizChoice(null)}}/></View>}</Card>}
-  <Text style={s.section}>4. Daily study routine</Text><Card><Text style={s.bodyText}>Read one Dawn editorial, note 5–10 useful words, learn their Urdu meanings and antonyms, write a short paragraph using three words, then attempt the quiz. Review saved essay outlines weekly.</Text></Card>
+  <Text style={s.section}>4. Daily study routine</Text>
+  <Text style={s.note}>A repeatable 2-hour plan for candidates preparing alongside work or studies. Adjust the timings, but keep the daily review and self-test.</Text>
+  <Card><Text style={s.rowTitle}>Daily 120-minute timetable</Text>
+   {[
+    ['00–10 min · Recall yesterday','Without looking at notes, write down yesterday’s key facts and five vocabulary words. Check and correct your recall.'],
+    ['10–35 min · Dawn reading','Read one selected Dawn editorial. Identify its main argument, the issue, causes, effects and proposed solutions. Note the publication date.'],
+    ['35–55 min · Vocabulary','Learn 5–10 words: Urdu meaning, two synonyms, one antonym and an original sentence. Revisit older words before adding new ones.'],
+    ['55–80 min · Pakistan/current affairs','Make five short fact-based notes from the article and connect the issue to Pakistan’s constitution, economy, society or governance where relevant. Verify facts from reliable sources.'],
+    ['80–100 min · Writing practice','Write one 120–150 word paragraph or one essay introduction using at least three new words. Keep a clear topic sentence and logical flow.'],
+    ['100–115 min · Quiz and correction','Attempt the vocabulary quiz without notes. Record wrong answers and write the correct meaning in your own words.'],
+    ['115–120 min · Plan tomorrow','Choose the next article/topic and mark difficult words for review.']
+   ].map((item,i)=><View key={item[0]} style={s.word}><Text style={s.wordTitle}>{item[0]}</Text><Text style={s.bodyText}>{item[1]}</Text></View>)}
+  </Card>
+  <Card><Text style={s.rowTitle}>Seven-day rotation</Text>
+   {[
+    ['Monday · Governance','Read governance/editorial content; practise accountability, transparency and rule-of-law vocabulary.'],
+    ['Tuesday · Economy','Focus on inflation, taxation, budgets, trade, employment and economic reform.'],
+    ['Wednesday · Climate & environment','Study climate adaptation, water security, energy and disaster preparedness.'],
+    ['Thursday · Education & society','Focus on education, health, population, gender, youth and social development.'],
+    ['Friday · Pakistan affairs','Review constitutional issues, institutions, federalism, history and current national developments.'],
+    ['Saturday · Essay and précis','Write one essay outline, one introduction and a short précis; edit grammar and coherence.'],
+    ['Sunday · Weekly revision test','Revise all saved vocabulary, retake difficult questions and write a one-page summary of the week.']
+   ].map((item,i)=><View key={item[0]} style={s.word}><Text style={s.wordTitle}>{item[0]}</Text><Text style={s.bodyText}>{item[1]}</Text></View>)}
+  </Card>
+  <Card><Text style={s.rowTitle}>Vocabulary revision cycle</Text><Text style={s.bodyText}>Review each new word on the same day, the next day, after three days, after one week and after two weeks. Hide the meaning and test yourself before checking it. Keep a separate list of words you repeatedly miss.</Text><Text style={s.rowTitle}>Weekly targets</Text><Text style={s.bodyText}>5–7 Dawn editorials read · 35–50 words revised · 2 essay outlines · 1 timed paragraph or précis · 1 weekly self-test.</Text><Text style={s.note}>This is a suggested study plan, not an official commission syllabus. Match subject coverage to the advertisement and syllabus for your target post.</Text></Card>
   <Text style={s.note}>Article links are from Dawn. Urdu meanings, synonyms, antonyms, examples, essay outlines and quiz questions are independently authored study aids. Check the original article for context and date.</Text>
  </View></>;
  const Saved=()=> <><Header title="Saved Material" sub="Bookmarks stored locally on this device"/><View style={s.content}><Text style={s.section}>Saved posts and study items</Text><Text style={s.muted}>{progress.bookmarks.length} bookmarked items · {progress.completedQuizIds.length} completed quizzes</Text>{progress.bookmarks.length===0?<Text style={s.note}>No bookmarks yet. Use the bookmark control on content as it is added.</Text>:progress.bookmarks.map(id=><Card key={id}><Text style={s.rowTitle}>{id}</Text><Btn label="Remove bookmark" soft onPress={()=>toggle(id)}/></Card>)}</View></>;
