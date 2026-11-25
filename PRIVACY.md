@@ -1,23 +1,23 @@
-# Pak-Prep Privacy Policy (pre-release draft)
+# Pak-Prep Privacy Policy — pre-release draft
 
-**Effective date:** To be set before public release.
+**Effective date:** Set before public release. **Publisher/contact:** Add the legal publisher name and monitored support email before submission.
 
-Pak-Prep is a competitive-exam study app. This draft describes the current starter build and must be reviewed and published at a stable public URL before any store submission.
+## Current app behaviour
+The current starter app stores bookmarks and quiz completion locally on the user's device using AsyncStorage. It does not currently require registration, operate a Pak-Prep account server, process payments, or intentionally collect location data.
 
-## Information collected
-The current starter app does not provide user accounts, analytics, advertising identifiers, payment processing, or a cloud profile. It does not intentionally collect personal information. If later versions add accounts, cloud sync, analytics, push notifications, ads, or payments, this policy must be updated before those features are released.
+## Optional backend
+The repository includes an optional Supabase schema and client scaffold. The current app does not yet send user progress to Supabase. If authentication, cloud sync, analytics, ads, crash reporting, push notifications or other SDKs are enabled later, this policy and each store's privacy disclosures must be updated to reflect the actual data collected, purposes, retention and deletion process.
 
 ## External links
-The app can open third-party websites, including recruiting bodies, TestPoint.pk source indexes and Dawn. Those websites operate under their own privacy policies and may collect information when you visit them. Pak-Prep does not control those sites.
+The app may open external recruitment websites and Dawn articles. Those websites have their own privacy policies and may collect information independently. Pak-Prep does not control them.
 
 ## Children's privacy
-The app is designed for general competitive-exam study and is not specifically directed to children under 13. If the app's audience or features change, this section must be reviewed.
+The app is a general competitive-exam study tool and is not specifically directed to children under 13. Review this section if the audience or features change.
 
-## Data security and retention
-The current starter app does not operate a Pak-Prep user-data server. If future versions store accounts, bookmarks, test results or other user data, this policy must describe storage, security, retention and deletion procedures.
+## Security, retention and deletion
+Local bookmarks and quiz completion remain on the device and can be removed by clearing app data or uninstalling the app. Before adding cloud accounts, publish a complete account deletion and retention process.
 
 ## Contact
-Before release, add a monitored support email and the legal publisher/operator's name and address here.
+Before release, replace this section with the publisher's legal name, support email and contact address.
 
-## Release note
-This is a draft, not a final legal policy. Replace placeholders and verify actual SDK, hosting, analytics and store integrations before publication.
+**Release warning:** This is a draft, not legal advice or a final privacy policy. Audit the final binary, SDKs, data flows, hosting and store declarations before publishing.
