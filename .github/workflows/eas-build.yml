@@ -1,0 +1,40 @@
+name: Expo store builds
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Build target
+        required: true
+        type: choice
+        options:
+          - android-apk
+          - all-store
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install
+      - name: Validate build configuration
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          EAS_PROJECT_ID: ${{ secrets.EAS_PROJECT_ID }}
+        run: |
+          test -n "$EXPO_TOKEN" || (echo "Add EXPO_TOKEN in GitHub Actions secrets" && exit 1)
+          test -n "$EAS_PROJECT_ID" || (echo "Add EAS_PROJECT_ID in GitHub Actions secrets" && exit 1)
+      - name: Build Android APK for direct installation
+        if: inputs.target == 'android-apk'
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          EAS_PROJECT_ID: ${{ secrets.EAS_PROJECT_ID }}
+        run: npx eas-cli@latest build --platform android --profile preview --non-interactive
+      - name: Build Android AAB and iOS store binary
+        if: inputs.target == 'all-store'
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          EAS_PROJECT_ID: ${{ secrets.EAS_PROJECT_ID }}
+        run: npx eas-cli@latest build --platform all --profile production --non-interactive
