@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pak-prep.example/schemas/past-paper.schema.json",
+  "title": "Pak-Prep Past Paper Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "region",
+    "recruitingBody",
+    "department",
+    "postTitle",
+    "bps",
+    "examYear",
+    "sourceUrl",
+    "rightsStatus",
+    "verificationStatus"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "region": {
+      "enum": [
+        "Federal",
+        "Punjab",
+        "Sindh",
+        "Khyber Pakhtunkhwa",
+        "Balochistan",
+        "AJK",
+        "Gilgit-Baltistan"
+      ]
+    },
+    "recruitingBody": {
+      "type": "string",
+      "minLength": 1
+    },
+    "department": {
+      "type": "string",
+      "minLength": 1
+    },
+    "postTitle": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bps": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 22
+    },
+    "examYear": {
+      "type": "integer",
+      "minimum": 1990,
+      "maximum": 2100
+    },
+    "examDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "paperLanguage": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "paperFileUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "sourceUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "answerKeyUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "rightsStatus": {
+      "enum": [
+        "public_domain",
+        "licensed",
+        "user_authorized",
+        "link_only",
+        "pending_review"
+      ]
+    },
+    "rightsEvidence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verificationStatus": {
+      "enum": [
+        "unverified",
+        "metadata_checked",
+        "paper_checked",
+        "answer_key_verified"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}
