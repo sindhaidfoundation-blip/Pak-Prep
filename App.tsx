@@ -45,9 +45,9 @@ const articles = [
     url: 'https://www.dawn.com/news/2021796',
     summary: 'Study the article on governance challenges. Read the original article on Dawn, then use the vocabulary notes below for comprehension and essay writing.',
     words: [
-      { word: 'Governance', urdu: 'طرزِ حکمرانی / نظامِ حکومت', synonyms: 'administration, management, leadership', antonyms: 'misrule, disorder', essay: 'Effective governance is essential for institutional stability.' },
-      { word: 'Failure', urdu: 'ناکامی', synonyms: 'breakdown, collapse, defeat', antonyms: 'success, achievement', essay: 'Policy failure often reflects weak implementation.' },
-      { word: 'Accountability', urdu: 'جوابدہی', synonyms: 'responsibility, answerability', antonyms: 'irresponsibility, impunity', essay: 'Public accountability strengthens trust in institutions.' },
+      { word: 'Spurious', urdu: 'جعلی / بے بنیاد', synonyms: 'false, unfounded, invalid', antonyms: 'genuine, authentic, valid', essay: 'A spurious argument cannot provide a sound basis for public policy.' },
+      { word: 'Traction', urdu: 'پذیرائی / پیش رفت', synonyms: 'momentum, acceptance, progress', antonyms: 'stagnation, rejection', essay: 'The reform proposal failed to gain traction among stakeholders.' },
+      { word: 'Cumulative', urdu: 'مجموعی / بتدریج جمع ہونے والا', synonyms: 'collective, accumulated, combined', antonyms: 'individual, separate', essay: 'The cumulative impact of weak institutions can undermine development.' },
     ],
   },
   {
@@ -56,9 +56,9 @@ const articles = [
     url: 'https://www.dawn.com/news/2021794',
     summary: 'Read the original Dawn piece and practise identifying its central argument, tone and supporting evidence.',
     words: [
-      { word: 'Imminent', urdu: 'قریب الوقوع', synonyms: 'approaching, impending, near', antonyms: 'distant, remote', essay: 'The country faces an imminent need for structural reform.' },
-      { word: 'Escalate', urdu: 'شدت اختیار کرنا / بڑھ جانا', synonyms: 'intensify, heighten, increase', antonyms: 'decrease, subside', essay: 'Unresolved disputes can escalate into wider crises.' },
-      { word: 'Urgency', urdu: 'فوری ضرورت / عجلت', synonyms: 'pressing need, importance, haste', antonyms: 'delay, indifference', essay: 'The urgency of reform cannot be ignored.' },
+      { word: 'Prevailing', urdu: 'رائج / غالب', synonyms: 'existing, current, widespread', antonyms: 'uncommon, absent', essay: 'Prevailing economic conditions demand practical policy responses.' },
+      { word: 'Oppressive', urdu: 'ظالمانہ / جابرانہ', synonyms: 'tyrannical, harsh, repressive', antonyms: 'liberal, tolerant, just', essay: 'Oppressive policies can deepen public resentment.' },
+      { word: 'Backfire', urdu: 'الٹا اثر کرنا', synonyms: 'rebound, misfire, boomerang', antonyms: 'succeed, work, achieve', essay: 'A poorly designed restriction may backfire and intensify resistance.' },
     ],
   },
 ];
