@@ -7,6 +7,7 @@ Pakistan-wide government-job preparation for **BPS-5 to BPS-22** across Federal,
 - Home, nationwide job directory, subject catalogue, practice quiz, Dawn vocabulary and saved-material screens.
 - Individual post listings under job families and official recruiting-body links.
 - Original sample practice questions clearly labelled as practice, not official past papers.
+- 62 General Knowledge practice MCQs are currently present; the requested 3,000-question sourced bank is not yet complete or independently imported/verified.
 - Device-local bookmarks and quiz completion using AsyncStorage.
 - Optional Supabase client scaffold and relational SQL migration with row-level security.
 - CSV template and validation script for authorized past-paper imports.
@@ -53,8 +54,14 @@ Google Play Console, Apple Developer Program/App Store Connect and any additiona
 
 ## Known unfinished work
 - Full authorized past-paper collection and verified answer keys.
+- Expand the General Knowledge bank from 62 to the 3,000-question target using the authorized source material, with deduplication and answer verification.
 - Admin dashboard and protected content moderation/import workflow.
 - Connect app screens to Supabase and add authentication/cloud sync.
 - Full question banks for every subject and each job-specific paper collection.
 - PDF viewer, offline paper downloads, timed exam modes and progress analytics.
 - Final QA, signed binaries and app-store submissions.
+
+## Validation
+- `npm run typecheck` — TypeScript compile-time checks.
+- `npm run validate` — checks the past-paper import CSV structure.
+- `npm run validate:mcqs` — checks MCQ IDs, option counts, answer indexes and required fields.
