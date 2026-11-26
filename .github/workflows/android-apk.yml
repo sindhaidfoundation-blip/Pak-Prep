@@ -4,8 +4,13 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths-ignore:
-      - "**.md"
+    paths:
+      - "app.json"
+      - "package.json"
+      - "package-lock.json"
+      - "src/**"
+      - "App.tsx"
+      - ".github/workflows/android-apk.yml"
 
 jobs:
   build-apk:
