@@ -24,6 +24,7 @@ insert into public.subjects(name,description) values
  ('Computer Science','IT fundamentals and office applications'),
  ('Current Affairs','Pakistan and international developments'),
  ('Urdu','Urdu grammar, literature and vocabulary'),
+ ('Sindhi','Sindhi grammar, literature and vocabulary'),
  ('Pedagogy','Teaching methods and education'),
  ('Analytical Reasoning','Logic, patterns and problem solving'),
  ('Geography','Pakistan and world geography')
