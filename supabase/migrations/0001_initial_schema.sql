@@ -71,7 +71,14 @@ create policy "published papers readable" on public.past_papers for select using
 create policy "published subjects readable" on public.subjects for select using (true);
 create policy "published mcqs readable" on public.mcqs for select using (status='published' and rights in ('public_domain','licensed','user_authorized'));
 create policy "published articles readable" on public.dawn_articles for select using (status='published');
-create policy "published vocabulary readable" on public.vocabulary for select using (status='published');
+create policy "published vocabulary readable" on public.vocabulary for select using (
+ status='published' and (
+  article_id is null or exists (
+   select 1 from public.dawn_articles as parent
+   where parent.id=article_id and parent.status='published'
+  )
+ )
+);
 create policy "users read own progress" on public.user_progress for select using (auth.uid()=user_id);
 create policy "users insert own progress" on public.user_progress for insert with check (auth.uid()=user_id);
 create policy "users update own progress" on public.user_progress for update using (auth.uid()=user_id) with check (auth.uid()=user_id);
