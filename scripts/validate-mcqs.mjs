@@ -5,7 +5,9 @@ const source = fs.readFileSync(file, 'utf8');
 const rows = source.split(/\r?\n/).filter(line => /^\s*\{id\s*:/.test(line));
 const errors = [];
 const ids = new Set();
-const questionSets = new Set();
+const questionStems = new Set();
+const reusableStems = new Set(['choose the correctly spelt word', 'choose the correct sentence', 'choose the grammatically correct sentence']);
+const allowedSubjects = new Set(['English','General Knowledge','Pakistan Studies','Islamic Studies','Everyday Science','Mathematics','Computer Science','Current Affairs','Urdu','Sindhi','Pedagogy','Analytical Reasoning','Geography']);
 
 function stringField(line, field) {
   const marker = new RegExp('\\b' + field + '\\s*:\\s*').exec(line);
@@ -65,6 +67,7 @@ for (const [index, line] of rows.entries()) {
   const subject = stringField(line, 'subject');
   const question = stringField(line, 'question');
   const explanation = stringField(line, 'explanation');
+  const sourceType = stringField(line, 'source');
   const optionsMatch = line.match(/\boptions\s*:\s*\[(.*)\]\s*,\s*answerIndex\s*:/);
   const answerMatch = line.match(/\banswerIndex\s*:\s*(-?\d+)/);
   const n = index + 1;
@@ -73,6 +76,9 @@ for (const [index, line] of rows.entries()) {
   else if (ids.has(id)) errors.push('Row ' + n + ': duplicate ID ' + id);
   else ids.add(id);
   if (!subject?.trim()) errors.push('Row ' + n + ': missing subject');
+  else if (!allowedSubjects.has(subject)) errors.push('Row ' + n + ': unknown subject ' + subject);
+  if (sourceType !== 'original_practice') errors.push('Row ' + n + ': invalid or missing source marker');
+  if (!/\},\s*$/.test(line)) errors.push('Row ' + n + ': missing comma after question record');
   if (!question?.trim()) errors.push('Row ' + n + ': missing question');
   if (!explanation?.trim()) errors.push('Row ' + n + ': missing explanation');
 
@@ -91,9 +97,12 @@ for (const [index, line] of rows.entries()) {
   }
 
   if (subject && question) {
-    const key = [normalize(subject), normalize(question), ...options.map(normalize), answerIndex].join('|');
-    if (questionSets.has(key)) errors.push('Row ' + n + ': duplicate question and answer set');
-    else questionSets.add(key);
+    const stem = normalize(question);
+    if (!reusableStems.has(stem)) {
+      const key = normalize(subject) + '|' + stem;
+      if (questionStems.has(key)) errors.push('Row ' + n + ': duplicate question stem');
+      else questionStems.add(key);
+    }
   }
 }
 
@@ -102,4 +111,4 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log('MCQ checks passed: ' + rows.length + ' questions, ' + ids.size + ' unique IDs, no exact duplicate question/answer sets.');
+console.log('MCQ checks passed: ' + rows.length + ' questions, ' + ids.size + ' unique IDs, no repeated question stems (except reusable generic prompts).');
