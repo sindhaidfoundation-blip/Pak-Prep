@@ -1,7 +1,7 @@
 import {supabase} from './supabase';
 export async function getPublishedPapers(filters:{region?:string;bps?:number;postTitle?:string}={}){
  if(!supabase) return [];
- let q=supabase.from('past_papers').select('id,title,exam_year,exam_date,paper_language,paper_url,source_url,answer_key_url,verification,job_posts(title,bps,region,departments(name),recruiting_bodies(name))').eq('status','published').order('exam_year',{ascending:false});
+ let q=supabase.from('past_papers').select('id,title,exam_year,exam_date,paper_language,paper_url,source_url,answer_key_url,verification,job_posts!inner(title,bps,region,departments(name),recruiting_bodies(name))').eq('status','published').order('exam_year',{ascending:false});
  if(filters.bps) q=q.eq('job_posts.bps',filters.bps);
  if(filters.region) q=q.eq('job_posts.region',filters.region);
  if(filters.postTitle) q=q.ilike('job_posts.title',`%${filters.postTitle}%`);
