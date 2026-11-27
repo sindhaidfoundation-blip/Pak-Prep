@@ -38,5 +38,5 @@ export const jobFamilies = [
 ] as const;
 
 export const subjects = [
- 'English','General Knowledge','Pakistan Studies / Pak Affairs','Islamic Studies','Everyday Science','Mathematics','Computer Science','Current Affairs','Urdu','Sindhi','Pedagogy','Analytical Reasoning','Geography'
+ 'NCCIA','English','General Knowledge','Pakistan Studies / Pak Affairs','Islamic Studies','Everyday Science','Mathematics','Computer Science','Current Affairs','Urdu','Sindhi','Pedagogy','Analytical Reasoning','Geography'
 ] as const;
